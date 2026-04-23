@@ -18,7 +18,7 @@ item_type_in_scope = ["Notebook"]
 
 # Use Azure CLI credential to authenticate
 client_id = "2f757062-5312-4fdf-9a1d-1fa15fb5ac57" ##SPN App (client) ID
-client_secret = "8if8Q~_7UM5jcyA8LuB-cuv8jGj95llRGtSUqa0u" ##SPN client secret
+client_secret = "" ##SPN client secret
 tenant_id = "e39cce29-5716-43ba-b27d-1bdd8fd67901" ##Tenant ID
 token_credential = ClientSecretCredential(client_id=client_id, client_secret=client_secret, tenant_id=tenant_id)
 
