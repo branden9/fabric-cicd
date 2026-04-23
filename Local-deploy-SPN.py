@@ -14,7 +14,7 @@ environment = "dev"
 repository_directory = str(root_directory / "sample/workspace")
 item_type_in_scope = ["Notebook", "Environment"]  # List of item types to publish/unpublish
 
-
+##test
 
 # Use Azure CLI credential to authenticate
 client_id = "2f757062-5312-4fdf-9a1d-1fa15fb5ac57" ##SPN App (client) ID
