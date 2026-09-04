@@ -11,6 +11,20 @@
 
 # CELL ********************
 
+# Library import
+from datetime import datetime
+
+from pyspark.sql.functions import col, concat_ws, lit, sha2
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 from pyspark.sql import SparkSession
 
 # Start spark session if it is not already running
@@ -50,7 +64,6 @@ source_schema = "Cleansed"
 destination_schema = "Conformed"
 destination_table = "mytable"
 
-from datetime import datetime
 valid_ts = datetime.now()
 
 # METADATA ********************
@@ -137,8 +150,6 @@ display(df)
 # CELL ********************
 
 # Create a full row hash over all columns in the df, used to detect changed records
-from pyspark.sql.functions import sha2, concat_ws, col, lit
-
 df = df.withColumn("_rowhash", sha2(concat_ws("||", *[col(c) for c in df.columns]), 256))
 
 # Add SCD2 tracking columns
